@@ -1,10 +1,10 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 
 /**
     Programa que simula a "Cifra de César"
     Uma frase é digitada e os caracteres são convertidos em inteiros utilizando a tabela ASCII.
-    Depois disso, os números são somados a um números escolhido, mudando seu valor na tabela e
+    Depois disso, os números são somados a um número escolhido, mudando seu valor na tabela e
     retornando uma frase com caracteres diferentes, criptografando a mensagem.
 */
 
