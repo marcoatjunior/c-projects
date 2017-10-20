@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 /**
-    Programa que simula a "Cifra de César"
-    Uma frase é digitada e os caracteres são convertidos em inteiros utilizando a tabela ASCII.
-    Depois disso, os números são somados a um números escolhidos, mudando seu valor na tabela e
+    Programa que simula a "Cifra de CÃ©sar"
+    Uma frase Ã© digitada e os caracteres sÃ£o convertidos em inteiros utilizando a tabela ASCII.
+    Depois disso, os nÃºmeros sÃ£o somados a um nÃºmeros escolhido, mudando seu valor na tabela e
     retornando uma frase com caracteres diferentes, criptografando a mensagem.
 */
 
