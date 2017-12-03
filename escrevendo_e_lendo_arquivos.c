@@ -12,7 +12,7 @@ char stringToFile(char * text[]){
     return text;
 }
 
-char moreInformation(char * text[]){
+char moreInformation(FILE * file, char * text[]){
     char option;
 
     do{
@@ -23,6 +23,7 @@ char moreInformation(char * text[]){
         switch(option){
             case 'S':
                 stringToFile(text);
+                fprintf(file, text);
             break;
 
             case 'N':
@@ -57,9 +58,7 @@ int main(){
     fprintf(file, text);
 
     /* Passos 3, 4 e 5 */
-    moreInformation(text);
-
-    fprintf(file, text);
+    moreInformation(file, text);
 
     fclose(file);
 
