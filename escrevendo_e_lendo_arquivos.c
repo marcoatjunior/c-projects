@@ -13,7 +13,8 @@ char stringToFile(char * text[]){
 }
 
 char moreInformation(FILE * file, char * text[]){
-    char option;
+    
+	char option;
 
     do{
         printf("Voce deseja inserir mais conteudo no arquivo? Digite S para Sim e N para Nao. \n");
