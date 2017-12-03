@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void ifIsunreadable(FILE * file){
+void ifIsUnreadable(FILE * file){
     if (file == NULL){
         printf("Nao foi possivel abrir o arquivo.\n");
         exit(EXIT_FAILURE);
@@ -34,8 +34,8 @@ int main(){
     int i = 0;
 
     // Verifica conteúdo dos arquivos
-    ifIsunreadable(fileOne);
-    ifIsunreadable(fileTwo);
+    ifIsUnreadable(fileOne);
+    ifIsUnreadable(fileTwo);
 
     // Recebe inteiros retornados do arquivo
     vet1 = readIntValue(fileOne, "LP_arquivo_1.txt");
@@ -45,7 +45,7 @@ int main(){
     result = fopen("marco_taborda_resultado.txt", "w");
 
     // Verifica conteúdo do arquivo
-    ifIsunreadable(result);
+    ifIsUnreadable(result);
 
     // Adiciona ao ponteiro values cada valor das posições somadas
     for(i = 0; i < 9; i++, vet1++, vet2++, values++){
