@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <locale.h>
 
-char stringToFile(FILE * file, char * text[]){
+void stringToFile(FILE * file, char * text[]){
 
     printf("Digite qualquer texto: \n");
     gets(text);
@@ -10,11 +10,9 @@ char stringToFile(FILE * file, char * text[]){
     strcat(text, "\n");
 
     fprintf(file, text);
-
-    return text;
 }
 
-char moreInformation(FILE * file, char * text[]){
+void moreInformation(FILE * file, char * text[]){
 
 	char option;
 
