@@ -53,7 +53,7 @@ int main(){
         exit(EXIT_FAILURE);
     }
 
-    /* Passo 1 */
+    /* Passos 1 e 2 */
     stringToFile(file, text);
 
     /* Passos 2, 3, 4 e 5 */
