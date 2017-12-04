@@ -2,15 +2,21 @@
 #include <stdlib.h>
 
 void ifIsUnreadable(FILE * file){
+
     if (file == NULL){
         printf("Nao foi possivel abrir o arquivo.\n");
         exit(EXIT_FAILURE);
     }
+
 }
 
 void readIntValue(FILE * file, const char * name, int values[]){
-    file = fopen(name, "r");
+
     int i = 0, pos = 0;
+
+    file = fopen(name, "r");
+
+    ifIsUnreadable(file);
 
     while (!feof (file)){
         fscanf (file, "%d", &i);
@@ -22,16 +28,13 @@ void readIntValue(FILE * file, const char * name, int values[]){
 }
 
 int main(){
+
     FILE * fileOne;
     FILE * fileTwo;
     FILE * result;
 
-    int i = 0, * sum;
+    int i = 0;
     int values1[10], values2[10], results[10];
-
-    // Verifica conteúdo dos arquivos
-    ifIsUnreadable(fileOne);
-    ifIsUnreadable(fileTwo);
 
     // Recebe inteiros retornados do arquivo
     readIntValue(fileOne, "LP_arquivo_1.txt", values1);
@@ -43,14 +46,14 @@ int main(){
     // Verifica conteúdo do arquivo
     ifIsUnreadable(result);
 
-    sum = &results[0];
-
     // Adiciona ao vetor results cada valor das posições somadas
-    for(i = 0; i < 9; i++, sum++){
+    for(i = 0; i < 9; i++){
         results[i] = values1[i] + values2[i];
-        printf("Soma Posicao %d = %d \n", i+1, results[i]);
-        fprintf(result, sum);
-        strcat(sum, "\n");
+    }
+
+    // Adiciona ao arquivo os resultados, de três em três
+    for(i = 0; i < 9; i+=3){
+        fprintf(result, "%d %d %d \n", results[i], results[i+1], results[i+2]);
     }
 
     // Fecha o arquivo
