@@ -2,18 +2,20 @@
 #include <stdlib.h>
 #include <locale.h>
 
-char stringToFile(char * text[]){
+char stringToFile(FILE * file, char * text[]){
 
     printf("Digite qualquer texto: \n");
     gets(text);
 
     strcat(text, "\n");
 
+    fprintf(file, text);
+
     return text;
 }
 
 char moreInformation(FILE * file, char * text[]){
-    
+
 	char option;
 
     do{
@@ -23,8 +25,7 @@ char moreInformation(FILE * file, char * text[]){
 
         switch(option){
             case 'S':
-                stringToFile(text);
-                fprintf(file, text);
+                stringToFile(file, text);
             break;
 
             case 'N':
@@ -53,12 +54,9 @@ int main(){
     }
 
     /* Passo 1 */
-    stringToFile(text);
+    stringToFile(file, text);
 
-    /* Passo 2 */
-    fprintf(file, text);
-
-    /* Passos 3, 4 e 5 */
+    /* Passos 2, 3, 4 e 5 */
     moreInformation(file, text);
 
     fclose(file);
